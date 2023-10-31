@@ -10,7 +10,7 @@ There are two options as of now:
 - Basic Sort: Sorts your folder on a single level into 6 folders namely {Photos, AudioVideo, Documents, CodingFiles, Folders, Others}.
 - Deep Sort: Further sorts your documents folders based on their extensions.
 
-#### This program is still under development. New versions will also include a custom sorting feature using which the user can create a custom sort based on their desired extensions, filenames and foldernames.
+### This program is still under development. New versions will also include a custom sorting feature using which the user can create a custom sort based on their desired extensions, filenames and foldernames.
 
 ## Usage
 
