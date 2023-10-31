@@ -17,24 +17,34 @@ There are two options as of now:
 To sort your files
 
 - Clone this project into your downloads folder
+
+```
   $ cd
   $ cd Downloads
   $ git clone https://github.com/mana-sg/FSS
+```
+
 - Install the requirements.txt file using this command
 
+```
   $ pip install -r requirements.txt
+```
 
 - Open the terminal and change to the directory you want to sort
 
+```
   $ cd PATH/TO/FOLDER
+```
 
 - To use the program
 
+```
   $ python3 /Downloads/FSS/main.py -flag
+```
 
-  #### Use:
+#### Use:
 
-  - -b: This flag is used to do basic sort.
-  - -d: This flag is used to do deep sort.
+- -b: This flag is used to do basic sort.
+- -d: This flag is used to do deep sort.
 
 ### New features coming soon...
