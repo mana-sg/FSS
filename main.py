@@ -1,5 +1,5 @@
 from argparse import ArgumentParser, Namespace
-from fos import FileSort
+from modules.fos import FileSort
 import sys
 
 parser = ArgumentParser()
