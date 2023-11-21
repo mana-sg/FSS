@@ -8,8 +8,9 @@ from .progressBar import ProgressBar
 class FileSort:
     def __init__(self):
         '''Initialises the important parameters required to sort the files.'''
-
-        with open("/Downloads/FSS/constants.json", "r") as data:
+        file_path = os.path.dirname(os.path.abspath(__file__))
+        constants_file_path = os.path.join(file_path, "constants.json")
+        with open(constants_file_path, "r") as data:
             data = json.load(data)['EXTENSIONS']
             self.IMAGE_EXT = data['IMAGE_EXT']
             self.AV_EXT = data["AV_EXT"]
