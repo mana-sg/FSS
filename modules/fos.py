@@ -1,6 +1,6 @@
 import os
 import json
-from progressBar import ProgressBar
+from .progressBar import ProgressBar
 
 # A class with all kinds of sorts
 
@@ -9,7 +9,7 @@ class FileSort:
     def __init__(self):
         '''Initialises the important parameters required to sort the files.'''
 
-        with open("extensions.json", "r") as data:
+        with open("/Downloads/FSS/constants.json", "r") as data:
             data = json.load(data)['EXTENSIONS']
             self.IMAGE_EXT = data['IMAGE_EXT']
             self.AV_EXT = data["AV_EXT"]
