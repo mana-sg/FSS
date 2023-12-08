@@ -12,10 +12,7 @@ class FileSort:
         constants_file_path = os.path.join(file_path, "constants.json")
         with open(constants_file_path, "r") as data:
             data = json.load(data)['EXTENSIONS']
-            self.IMAGE_EXT = data['IMAGE_EXT']
-            self.AV_EXT = data["AV_EXT"]
-            self.DOCUMENT_EXT = data['DOCUMENT_EXT']
-            self.CODING_EXT = data['CODING_EXT']
+            self.EXTENSIONS = data['BASIC_SORT']
             self.ALL_FOLDERS_CREATED = data['ALL_FOLDERS_CREATED']
 
             self.PATH = os.getcwd()
@@ -40,26 +37,15 @@ class FileSort:
         for file in self.files_in_directory:
             root, ext = os.path.splitext(f"{self.PATH}/{file}")
 
-            if root in self.ALL_FOLDERS_CREATED and ext == '':
-                continue
-
-            elif ext in self.IMAGE_EXT:
-                self.createDirectory(folderName="Photos", file=file)
-
-            elif ext in self.DOCUMENT_EXT:
-                self.createDirectory(folderName="Documents", file=file)
-
-            elif ext in self.AV_EXT:
-                self.createDirectory(folderName="AudioVideo", file=file)
-
-            elif ext in self.CODING_EXT and root != f"{self.PATH}/main":
-                self.createDirectory(folderName="CodingFiles", file=file)
-
-            elif ext == '' and root not in self.ALL_FOLDERS_CREATED:
-                self.createDirectory(folderName="Folders", file=file)
+            if ext == '':
+                if root in self.ALL_FOLDERS_CREATED:
+                    continue
+                else:
+                    self.createDirectory(folderName="Folders", file=file)
 
             else:
-                self.createDirectory(folderName="Others", file=file)
+                self.createDirectory(
+                    folderName=self.EXTENSIONS[ext], file=file)
 
         # Creates a progress bar using the class object ProgressBar and prints the final statement after sorting it.
         pgBar = ProgressBar(desc=desc)
